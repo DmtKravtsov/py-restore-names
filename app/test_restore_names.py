@@ -1,4 +1,5 @@
 import pytest
+from typing import List
 from app.restore_names import restore_names
 
 
@@ -70,6 +71,6 @@ from app.restore_names import restore_names
         ),
     ],
 )
-def test_restore_names(users, expected):
+def test_restore_names(users: List, expected: List) -> None:
     restore_names(users)
     assert users == expected
